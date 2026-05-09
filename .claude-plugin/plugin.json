@@ -1,0 +1,8 @@
+{
+  "name": "cadenza",
+  "description": "A 5-phase pipeline for technical content creation (blog / deck / LT). Each phase — issue-finding, decomposition, storyboarding, analysis, output-crafting — acts as a gate, enforcing think-before-write discipline. Inspired by issue-first thinking traditions in knowledge work.",
+  "version": "0.3.1",
+  "author": {
+    "name": "Naoki Yokomachi"
+  }
+}

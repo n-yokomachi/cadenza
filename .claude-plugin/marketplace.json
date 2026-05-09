@@ -1,0 +1,21 @@
+{
+  "name": "cadenza",
+  "owner": {
+    "name": "Naoki Yokomachi"
+  },
+  "metadata": {
+    "description": "cadenza — a Claude Code plugin for phased technical-output creation"
+  },
+  "plugins": [
+    {
+      "name": "cadenza",
+      "description": "A 5-phase gated pipeline for technical content creation. Each phase — issue-finding, decomposition, storyboarding, analysis, output-crafting — acts as a gate, enforcing think-before-write discipline. Inspired by issue-first thinking traditions in knowledge work.",
+      "version": "0.3.1",
+      "author": {
+        "name": "Naoki Yokomachi"
+      },
+      "category": "productivity",
+      "source": "./"
+    }
+  ]
+}
