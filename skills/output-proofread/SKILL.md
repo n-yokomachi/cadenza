@@ -20,7 +20,7 @@ The deliverable is a finding report. **This skill never edits the artifact silen
 
 - `./.cadenza/state.md` must contain Phase 5 (Output Crafting) — i.e. the artifact under audit must already exist.
 - Determine the artifact path:
-  - Default: the path recorded in Phase 5's "Generated outputs" section (typically `./.cadenza/output.md`, or an author-relocated path such as `~/work/workshop/zenn/articles/<file>.md`).
+  - Default: the path recorded in Phase 5's "Generated output" section (typically `./.cadenza/output.md`, or an author-relocated path such as `~/work/workshop/zenn/articles/<file>.md`).
   - If the author specifies a different path, use that.
 - If a voice/style profile exists at `./.cadenza/voice-style-notes.md`, fold "voice profile compliance" into the audit.
 

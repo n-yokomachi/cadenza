@@ -134,7 +134,7 @@ If any of these signals appears during verification, stop immediately. Ignoring 
 
 Once `./.cadenza/state.md` is written, ask the user:
 
-> ✅ Phase 4 (Analysis Execution) is complete. Proceed to `output-crafting` (format-specific finishing)?
+> ✅ Phase 4 (Analysis Execution) is complete. Proceed to `output-crafting` (format-agnostic final Markdown artifact)?
 
 - **Proceed**: Invoke `cadenza:output-crafting` via the Skill tool.
 - **Hold**: Wait for revision instructions.

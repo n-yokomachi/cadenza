@@ -107,4 +107,4 @@ When the author explicitly declares the review complete, append to `./.cadenza/s
 - [ready to publish / hold for further work + reason]
 ```
 
-The `cadenza` workflow is then truly complete.
+This closes the review cycle.
