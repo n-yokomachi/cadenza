@@ -19,7 +19,7 @@ Then restart Claude Code.
 
 ## What it does
 
-Once installed, the plugin exposes 7 skills, callable as slash commands:
+Once installed, the plugin exposes 8 skills, callable as slash commands:
 
 | Phase | Skill | Role |
 |-------|-------|------|
@@ -30,14 +30,15 @@ Once installed, the plugin exposes 7 skills, callable as slash commands:
 | 5. Finish | `/cadenza:output-crafting` | Produce the final Markdown artifact |
 | Review | `/cadenza:output-proofread` | AI-driven exhaustive accuracy + language audit |
 | Review | `/cadenza:output-review` | Author-led review-cycle support |
+| Publish | `/cadenza:output-publish` | Finish `output.md` for Zenn / slide-structured deck / LT |
 
 Each skill, on completion, asks "proceed to next phase?" and chains to the next skill on confirmation. State is shared via `./.cadenza/state.md` in the working directory. The final artifact is written to `./.cadenza/output.md`.
 
 ## What you do with `output.md`
 
-cadenza deliberately produces a **single, format-agnostic Markdown file**. Platform-specific finishing — Zenn frontmatter, SpeakerDeck Marp directives, LT-specific compression — is left to downstream tooling so this plugin stays useful regardless of where you publish.
+cadenza deliberately produces a **single, format-agnostic Markdown file**. Platform-specific finishing — Zenn frontmatter, SpeakerDeck Marp directives, LT-specific compression — happens after the pipeline, so the core phases stay useful regardless of where you publish.
 
-Some common downstream paths:
+`/cadenza:output-publish` covers three targets: a Zenn article (`output-zenn.md`, matching the voice of your past articles), slide-structured Markdown for AI slide tools (`output-deck.md`), and a compressed LT version (`output-lt.md`). For other destinations:
 
 - **Blog posts (Qiita / Zenn / dev.to / personal blog)**: copy `output.md` into your blog repo, add platform-specific frontmatter, adjust syntax (`:::message` for Zenn, etc.).
 - **Conference decks / LT slides**: feed `output.md` to an AI slide-generation tool (Claude Design, Gamma, etc.) which can consume the structured Markdown and produce visual slides.
@@ -72,6 +73,7 @@ cadenza/
     ├── storyboarding/SKILL.md
     ├── analysis-execution/SKILL.md
     ├── output-crafting/SKILL.md
+    ├── output-publish/      ← SKILL.md + references/{zenn,deck,lt}.md
     ├── output-proofread/SKILL.md
     └── output-review/SKILL.md
 ```

@@ -11,7 +11,7 @@ Produce the final Markdown artifact from the confirmed storyline and verificatio
 
 The workflow's finishing phase. **Be message-driven and shape the output so the reader grasps the essence in the shortest path.** The standard is "what gets through", not "what I want to say".
 
-This skill produces a single, format-agnostic Markdown file at `./.cadenza/output.md`. Platform-specific finishing (Zenn frontmatter, SpeakerDeck / Marp directives, LT-specific compression, etc.) is the responsibility of downstream publishing tooling — it deliberately does not happen here.
+This skill produces a single, format-agnostic Markdown file at `./.cadenza/output.md`. Platform-specific finishing (Zenn frontmatter, SpeakerDeck / Marp directives, LT-specific compression, etc.) is handled afterwards by `cadenza:output-publish` (or your own tooling) — it deliberately does not happen here.
 
 ## Prerequisites
 

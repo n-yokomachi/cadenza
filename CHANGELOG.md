@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.4.0] - 2026-10-10
+
+### Added
+
+- **`output-publish` skill**: `./.cadenza/output.md` を Zenn 記事（過去記事からの文体抽出つき）、AI スライド生成ツール向けの構造化 Markdown（deck）、LT 向けの圧縮版に仕上げる。出力は `./.cadenza/output-{zenn,deck,lt}.md`。これまで別プラグイン `cadenza-personal` にあった機能を cadenza 本体に統合した。
+
 ## [0.3.1] - 2026-05-07
 
 ### Changed

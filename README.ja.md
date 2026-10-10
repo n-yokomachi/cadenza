@@ -19,7 +19,7 @@ claude plugin install cadenza@cadenza
 
 ## できること
 
-インストールすると、以下の 7 つのスキルがスラッシュコマンドとして使えるようになります:
+インストールすると、以下の 8 つのスキルがスラッシュコマンドとして使えるようになります:
 
 | フェーズ | スキル | 役割 |
 |---------|--------|------|
@@ -30,14 +30,15 @@ claude plugin install cadenza@cadenza
 | 5. 仕上げ | `/cadenza:output-crafting` | 最終 Markdown 成果物を生成 |
 | レビュー | `/cadenza:output-proofread` | AI 主導の徹底校正（事実検証 + 言語校正）|
 | レビュー | `/cadenza:output-review` | 著者主導のレビューサイクル支援 |
+| 公開準備 | `/cadenza:output-publish` | `output.md` を Zenn / スライド用構造化 Markdown / LT 向けに仕上げる |
 
 各スキルは完了時に「次のフェーズに進みますか？」と確認し、承認されれば次のスキルを Skill ツール経由で呼び出してチェーンします。状態は作業ディレクトリの `./.cadenza/state.md` に共有されます。最終成果物は `./.cadenza/output.md` に書き出されます。
 
 ## `output.md` の使い道
 
-cadenza は意図的に **単一の汎用 Markdown ファイル** のみを生成します。Zenn の frontmatter、SpeakerDeck の Marp 指示子、LT 用の極限圧縮など、プラットフォーム固有の仕上げは下流のツールに委ねます。これにより、どこに公開するかに依存せずプラグインを使えるようにしています。
+cadenza は意図的に **単一の汎用 Markdown ファイル** のみを生成します。Zenn の frontmatter、SpeakerDeck の Marp 指示子、LT 用の極限圧縮など、プラットフォーム固有の仕上げはパイプラインの後に行います。これにより、どこに公開するかに依存せず中核のフェーズを使えるようにしています。
 
-代表的な下流の活用パス:
+`/cadenza:output-publish` は 3 つの出力先に対応します: Zenn 記事（`output-zenn.md`、過去記事の文体に合わせる）、AI スライド生成ツール向けの構造化 Markdown（`output-deck.md`）、LT 向けの圧縮版（`output-lt.md`）。その他の出力先の例:
 
 - **ブログ記事 (Qiita / Zenn / dev.to / 個人ブログ)**: `output.md` をブログリポジトリにコピーし、プラットフォーム固有の frontmatter を追加、構文を調整 (Zenn なら `:::message` など)。
 - **カンファレンス用デッキ / LT スライド**: `output.md` を AI スライド生成ツール (Claude Design、Gamma など) に食わせ、構造化 Markdown を解釈してビジュアルスライドを生成させる。
@@ -72,6 +73,7 @@ cadenza/
     ├── storyboarding/SKILL.md
     ├── analysis-execution/SKILL.md
     ├── output-crafting/SKILL.md
+    ├── output-publish/      ← SKILL.md + references/{zenn,deck,lt}.md
     ├── output-proofread/SKILL.md
     └── output-review/SKILL.md
 ```
